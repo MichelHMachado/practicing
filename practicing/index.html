@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practicing Vite + TS</title>
+  </head>
+  <body data-page="accordion">
+    <div class="nav-wrapper flex-box">
+      <nav class="nav-container flex-box space-between">
+        <div class="nav-logo">
+          <img class="nav-logo__image" src="/typescript.png" alt="" />
+        </div>
+        <div class="nav-menu">
+          <a data-page="accordion" class="nav-menu__link active" href=""
+            >Accordion</a
+          >
+          <a data-page="bank-account" class="nav-menu__link" href=""
+            >Bank Account</a
+          >
+          <a data-page="recipes-list" class="nav-menu__link" href=""
+            >Recipes List</a
+          >
+        </div>
+      </nav>
+    </div>
+    <div class="hero">
+      <div id="accordion" class="section w-50 mx-auto position-relative">
+        <div>
+          <h1>Accordion</h1>
+          <p class="centered">
+            Simple accordion elements made with changing styles with typescript
+          </p>
+          <div class="accordion-title flex-box space-between">
+            Places To Visit In Bangalore
+            <div class="multi-select">
+              <label>
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  id="multiselect"
+                  data-testid="multiselect"
+                />
+                Multiple
+              </label>
+            </div>
+          </div>
+
+          <div data-target-element class="accordion" data-testid="1">
+            <div
+              data-trigger-element
+              class="title-section flex-box space-between"
+            >
+              <div class="title">Lalbagh Botanical Garden</div>
+              <div class="expand-icon"></div>
+              <div class="collapse-icon"></div>
+            </div>
+            <div class="description">
+              Botanical garden with an aquarium & glasshouse designed to mimic
+              London's former Crystal Palace.
+            </div>
+          </div>
+
+          <div data-target-element class="accordion" data-testid="2">
+            <div
+              data-trigger-element
+              class="title-section flex-box space-between"
+            >
+              <div class="title">Cubbon Park</div>
+              <div class="expand-icon"></div>
+              <div class="collapse-icon"></div>
+            </div>
+            <div class="description">
+              Established in 1870, this vibrant city park has walking paths,
+              landscaped gardens & play areas.
+            </div>
+          </div>
+
+          <div data-target-element class="accordion" data-testid="3">
+            <div
+              data-trigger-element
+              class="title-section flex-box space-between"
+            >
+              <div class="title">Bannerghatta Biological Park</div>
+              <div class="expand-icon"></div>
+              <div class="collapse-icon"></div>
+            </div>
+            <div class="description">
+              Vast national reserve featuring a zoo, safari park, butterfly
+              conservatory & animal rescue center.
+            </div>
+          </div>
+
+          <div data-target-element class="accordion" data-testid="4">
+            <div
+              data-trigger-element
+              class="title-section flex-box space-between"
+            >
+              <div class="title">Dodda Alada Mara</div>
+              <div class="expand-icon"></div>
+              <div class="collapse-icon"></div>
+            </div>
+            <div class="description">
+              Planted in the 17th century, this 400-year-old banyan tree covers
+              3 acres & is a popular photo spot.
+            </div>
+          </div>
+
+          <div data-target-element class="accordion" data-testid="5">
+            <div
+              data-trigger-element
+              class="title-section flex-box space-between"
+            >
+              <div class="title">ISKCON Temple Bangalore</div>
+              <div class="expand-icon"></div>
+              <div class="collapse-icon"></div>
+            </div>
+            <div class="description">
+              Expansive, modern Hare Krishna temple campus, including shrines,
+              food stalls & souvenir shops.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="bank-account" class="section w-50 mx-auto position-relative">
+        <h1>Bank Account</h1>
+        <p class="centered">
+          Simple bank account functionality made with typescript class
+        </p>
+        <div class="flex-box centered">
+          <input id="amount" type="text" />
+          <div>
+            <button class="debit">Debit</button>
+            <button class="credit">Credit</button>
+          </div>
+        </div>
+
+        <div class="balance flex-box">
+          <span>$ </span><span class="balance-value"></span>
+        </div>
+      </div>
+      <div
+        id="recipes-list"
+        class="section container mx-auto position-relative"
+      >
+        <div>
+          <h1>Recipes list</h1>
+          <p class="w-50 centered">
+            Recipes list using DOM elements creation with typescript and
+            fetching data from a API
+          </p>
+          <div class="flex-box centered">
+            <input type="text" placeholder="Insert the dish" />
+            <button id="recipes-button">Get Recipes</button>
+          </div>
+        </div>
+        <ul class="recipes"></ul>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

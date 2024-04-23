@@ -1,0 +1,279 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+*:empty:not(input, img) {
+  display: none;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0 auto 24px auto;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-within,
+button:focus-visible {
+  outline: 4px auto white;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.nav-wrapper {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100vw;
+  background-color: #1a1a1a;
+}
+
+.nav-container {
+  position: relative;
+  padding: 0 32px;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-logo {
+  height: 80px;
+  width: 80px;
+  transition: transform 300ms;
+}
+
+.nav-logo:hover {
+  transform: scale(1.2);
+}
+
+.nav-logo__image {
+  width: 100%;
+}
+
+.nav-menu__link {
+  padding: 16px;
+  color: white;
+  border-radius: 16px;
+  transition: background-color 300ms;
+}
+
+.nav-menu__link:hover,
+.nav-menu__link.active {
+  background-color: gray;
+}
+
+.hero {
+  padding-top: 124px;
+}
+
+#accordion,
+#bank-account,
+#recipes-list {
+  transform: translateX(300%);
+  transition: transform 300ms, height 300ms;
+  height: 0;
+}
+
+body[data-page='accordion'] #accordion,
+body[data-page='bank-account'] #bank-account,
+body[data-page='recipes-list'] #recipes-list {
+  transform: translateX(0);
+  height: auto;
+  pointer-events: auto;
+  user-select: auto;
+}
+
+#accordion,
+#bank-account,
+#recipes-list {
+  pointer-events: none;
+  user-select: none;
+}
+
+.multi-select {
+  display: inline-block;
+}
+
+.accordion-title {
+  padding: 5px 10px;
+  border-bottom: 1px solid lightgray;
+  font-size: 1.5em;
+  color: darkgray;
+}
+
+.accordion {
+  position: relative;
+}
+
+.accordion .title-section {
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+
+}
+
+.accordion .title-section img {
+  max-width: 100%;
+}
+
+.accordion .title-section .title {
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+
+.accordion .title-section .expand-icon,
+.accordion .title-section .collapse-icon {
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 300ms;
+}
+
+.accordion .title-section .expand-icon {
+  display: block;
+  background-image: url('/down-icon.png');
+
+}
+
+.accordion.open>.title-section .expand-icon {
+  transform: rotate(180deg);
+}
+
+
+.accordion>.description {
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+  height: 0;
+  opacity: 0;
+  transition: padding 300ms, height 300ms, opacity 300ms;
+}
+
+.accordion.open>.description {
+  height: 100%;
+  opacity: 1;
+  padding: 5px 10px;
+}
+
+.accordion.open>.description .ingredient {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.balance {
+  gap: 2px;
+  border: 1px solid #1a1a1a;
+  padding: 16px;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.recipes {
+  list-style: none;
+  padding: 0;
+}
+
+.recipe-image {
+  max-width: 80px !important;
+  border-radius: 24px;
+  padding: 8px 0;
+}
+
+.container {
+  max-width: 1180px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.centered {
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.three-columns .expand-icon {
+  justify-self: end;
+}
